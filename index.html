@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>مرحبًا بك في موقعي</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #292b2c;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #007BFF;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s linear infinite;
+            margin: 30px auto;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <h1>مرحبًا بك في موقعي</h1>
+    <p>نص ترحيبي يمكن أن يحتوي على معلومات حول الموقع أو أهدافه.</p>
+    <p id="countdown">سيتم التوجيه تلقائيًا إلى صفحة المحتوى الرئيسية بعد: <span id="seconds">7</span> ثواني</p>
+    <a href="main.html">الدخول إلى الموقع</a>
+
+    <script>
+        var secondsLeft = 7;
+        var countdown = document.getElementById('seconds');
+
+        function updateCountdown() {
+            secondsLeft--;
+            countdown.textContent = secondsLeft;
+
+            if (secondsLeft <= 0) {
+                window.location.href = 'https://nizarloxer.github.io/loxer';
+            }
+        }
+
+        setInterval(updateCountdown, 1000); // تحديث العداد كل ثانية
+    </script>
+</body>
+</html>
